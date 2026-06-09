@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  background: white;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+#boot {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeOut 2s ease 2.5s forwards;
+}
+
+.swirl {
+  width: 320px;
+  height: 320px;
+  background-image: url('dreamcast_swirl.png'); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation: swirlFade 1.5s ease forwards;
+}
+
+.boot-text {
+  font-family: Arial, sans-serif;
+  font-size: 116px;
+  color: #333;
+  letter-spacing: 0.03em;
+  margin-top: 20px;
+  animation: textFade 1.5s ease 0.5s forwards;
+}
+
+
+@keyframes swirlFade {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes textFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; pointer-events: none; }
+}
