@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="endcss.css">
+    <title>DreamcastWeb</title>
+    <link rel="icon" href="favicon.ico">
+
+</head>
+<body>
+    <audio id="clickSound" src="CONFIRMATION.wav" preload="auto"></audio>
+
+    <div class="center-box">
+        <p>This feature is not available.<br>
+        Please power on your SEGA Dreamcast console.</p>
+        <p>Go play Ikaruga.</p>
+        <iframe width="540" height="540" src="https://www.youtube.com/embed/jSQysnFz6Cg" title="Japanese Sega Dreamcast Commercial - Retro Video Game Commercial / Ad" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    </div>
+
+
+    <script>
+        if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+        window.location.href = "index.html";
+        }
+    </script>
+
+    <script>
+        function playClick() {
+        const click = document.getElementById("clickSound");
+        click.currentTime = 0; 
+        click.play();
+        }
+
+        document.addEventListener("click", () => {
+            playClick();
+        });
+    </script>
+</body>
+</html>
